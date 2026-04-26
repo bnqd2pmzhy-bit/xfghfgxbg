@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
@@ -587,11 +588,42 @@
   .cal-wrap svg { width: 100%; height: auto; display: block; border-radius: 10px;
     box-shadow: 0 8px 36px rgba(155,126,119,.22); }
 
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    #details, #timeline, #dresscode, #rsvp, #gifts { padding: 70px 20px; }
+    .details-grid { gap: 32px 24px; }
+    .timeline-wrap { max-width: 100%; }
+    .timeline-content { width: calc(50% - 32px); }
+    .timeline-time { font-size: 1.2rem; }
+    .map-wrap { height: 240px; }
+    .rsvp-box { padding: 40px 24px; }
+    .swatches-grid { max-width: 260px; }
+    .palette-group { max-width: 260px; }
+    .cal-wrap { max-width: 85vw; }
+    .env-widget { width: min(300px, 80vw); }
+  }
+
   @media (max-width: 520px) {
-    .gifts-box, .rsvp-box { padding: 40px 20px; }
+    .gifts-box, .rsvp-box { padding: 36px 18px; }
     .env-letter { padding: 22px 16px 18px; }
     .alcohol-grid { grid-template-columns: 1fr; }
-    .cal-wrap { max-width: 90vw; }
+    .cal-wrap { max-width: 92vw; }
+    .details-grid { grid-template-columns: 1fr; gap: 28px; }
+    .map-wrap { height: 200px; }
+    .timeline-item { margin-bottom: 36px; }
+    .timeline-time { font-size: 1.1rem; }
+    .sec-sub { margin-bottom: 36px; }
+    .swatches-grid { max-width: 92vw; gap: 8px; }
+    .palette-group { max-width: 92vw; }
+    .lang-bar { padding: 10px 16px; }
+  }
+
+  @media (max-width: 380px) {
+    .names { font-size: 2.8rem; }
+    .save-the-date { font-size: 2rem; }
+    .timeline-content { width: calc(50% - 24px); }
+    .timeline-icon-wrap { width: 48px; }
+    .timeline-icon { width: 36px; height: 36px; }
   }
 </style>
 </head>
@@ -1161,10 +1193,16 @@
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll(
     '.js-reveal, .detail-card, .map-wrap, .cal-wrap, .gifts-box, .timeline-item, .dresscode-intro, .swatches-grid, .palette-group, .rsvp-box'
   ).forEach(el => io.observe(el));
+
+  // Fallback: reveal all after 3s in case observer misses something
+  setTimeout(() => {
+    document.querySelectorAll('.js-reveal, .palette-group, .cal-wrap, .map-wrap, .detail-card, .gifts-box, .dresscode-intro, .swatches-grid, .rsvp-box')
+      .forEach(el => el.classList.add('visible'));
+  }, 3000);
 
   window.addEventListener('load', () => { setLang('cs'); });
 </script>
