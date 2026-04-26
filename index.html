@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
@@ -466,7 +467,14 @@
     max-width: 300px; margin: 0 auto;
   }
 
-  /* ── MEN'S NOTE – refined ── */
+  .dresscode-women-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(.88rem, 2.2vw, 1rem);
+    font-weight: 300; font-style: italic;
+    line-height: 1.85; color: var(--seal);
+    margin-bottom: 20px;
+    letter-spacing: .03em;
+  }
   .men-note {
     margin-top: 22px;
     font-family: 'Cormorant Garamond', serif;
@@ -741,43 +749,107 @@
     box-shadow: 0 8px 36px rgba(155,126,119,.22); }
 
   /* ── RESPONSIVE ── */
+
+  /* Tablet */
   @media (max-width: 768px) {
+    #hero { padding: 80px 20px 60px; }
     #details, #timeline, #dresscode, #rsvp, #gifts { padding: 70px 20px; }
+
+    .names { font-size: clamp(2.8rem, 9vw, 4.5rem); }
+    .save-the-date { font-size: clamp(2rem, 6vw, 3rem); }
+
     .details-grid { gap: 32px 24px; }
+    .map-wrap { height: 240px; }
+    .cal-wrap { max-width: 85vw; }
+
     .timeline-wrap { max-width: 100%; }
     .timeline-content { width: calc(50% - 36px); }
     .timeline-time { font-size: 1.2rem; }
     .timeline-icon { width: 42px; height: 42px; }
-    .timeline-icon svg { width: 18px; height: 18px; }
-    .map-wrap { height: 240px; }
+    .timeline-icon-wrap { width: 72px; }
+
+    .swatches-grid { max-width: 280px; }
+    .palette-group { max-width: 280px; }
+
     .rsvp-box { padding: 40px 24px; }
-    .swatches-grid { max-width: 260px; }
-    .palette-group { max-width: 260px; }
-    .cal-wrap { max-width: 85vw; }
+    .gifts-box { padding: 40px 28px; }
+
     .env-widget { width: min(300px, 80vw); }
   }
 
+  /* Mobile */
   @media (max-width: 520px) {
-    .gifts-box, .rsvp-box { padding: 36px 18px; }
-    .env-letter { padding: 22px 16px 18px; }
-    .alcohol-grid { grid-template-columns: 1fr; }
-    .cal-wrap { max-width: 92vw; }
+    #hero { padding: 70px 16px 50px; }
+    #details, #timeline, #dresscode, #rsvp, #gifts { padding: 56px 16px; }
+
+    .names { font-size: clamp(2.4rem, 11vw, 3.5rem); }
+    .save-the-date { font-size: clamp(1.8rem, 8vw, 2.6rem); }
+    .initials { font-size: .75rem; letter-spacing: .25em; }
+
+    .sec-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+    .sec-sub { font-size: .65rem; margin-bottom: 32px; }
+
+    /* Details single column */
     .details-grid { grid-template-columns: 1fr; gap: 28px; }
     .map-wrap { height: 200px; }
-    .timeline-item { margin-bottom: 36px; }
-    .timeline-time { font-size: 1.1rem; }
-    .sec-sub { margin-bottom: 36px; }
-    .swatches-grid { max-width: 92vw; gap: 8px; }
-    .palette-group { max-width: 92vw; }
-    .lang-bar { padding: 10px 16px; }
+    .cal-wrap { max-width: 96vw; }
+
+    /* Timeline — stack vertically on small screens */
+    .timeline-wrap { max-width: 100%; }
+    .timeline-line { display: none; }
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+      flex-direction: column !important;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 32px;
+      transform: translateY(20px) !important;
+    }
+    .timeline-content,
+    .timeline-item:nth-child(odd)  .timeline-content:first-child,
+    .timeline-item:nth-child(even) .timeline-content:last-child {
+      width: 100%; text-align: center;
+    }
+    .timeline-content[style*="visibility:hidden"] { display: none; }
+    .timeline-icon-wrap { width: auto; margin: 8px 0; }
+    .timeline-dot { display: none; }
+
+    /* Dresscode */
+    .dresscode-intro { font-size: .9rem; margin-bottom: 32px; }
+    .swatches-grid { max-width: 96vw; gap: 8px; grid-template-columns: repeat(3, 1fr); }
+    .palette-group { max-width: 96vw; }
+    .men-note { font-size: .9rem; }
+
+    /* RSVP */
+    .rsvp-box { padding: 36px 16px; }
+    .rsvp-field { padding: 12px 14px; font-size: .95rem; }
+    .alcohol-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .alcohol-btn { font-size: .88rem; padding: 8px 10px; }
+
+    /* Gifts */
+    .gifts-box { padding: 32px 16px; }
+
+    /* Envelope */
+    .env-widget { width: min(280px, 88vw); padding-top: 180px; }
+    .env-letter { padding: 20px 14px 16px; }
+
+    /* Lang bar */
+    .lang-bar { padding: 10px 14px; gap: 4px; }
+    .lang-btn { font-size: .62rem; padding: 4px 10px; }
+
+    /* Mail preview */
+    .mail-preview { font-size: .85rem; padding: 16px 14px; }
   }
 
+  /* Small mobile */
   @media (max-width: 380px) {
-    .names { font-size: 2.8rem; }
-    .save-the-date { font-size: 2rem; }
-    .timeline-content { width: calc(50% - 24px); }
-    .timeline-icon-wrap { width: 48px; }
-    .timeline-icon { width: 36px; height: 36px; }
+    .names { font-size: 2.2rem; }
+    .save-the-date { font-size: 1.6rem; }
+    .sec-title { font-size: 1.6rem; }
+    .swatches-grid { grid-template-columns: repeat(2, 1fr); }
+    .rsvp-box { padding: 28px 12px; }
+    .alcohol-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -957,7 +1029,7 @@
   </div>
   <div class="map-wrap js-reveal">
     <iframe
-      src="https://https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2581.672342530237!2d13.139934199999999!3d49.679310400000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470a9476ed52fa85%3A0x6ccf22c5c6087bb4!2sDv%C5%AFr%20Gigant!5e0!3m2!1scs!2scz!4v1777236782506!5m2!1scs!2scz"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2581.672342530237!2d13.139934199999999!3d49.679310400000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470a9476ed52fa85%3A0x6ccf22c5c6087bb4!2sDv%C5%AFr%20Gigant!5e0!3m2!1scs!2scz!4v1777236782506!5m2!1scs!2scz"
       allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
       title="Dvůr Gigant Záluží">
     </iframe>
@@ -1136,7 +1208,12 @@
       <span data-lang="en">Women</span>
       <span data-lang="ru">Женщины</span>
     </p>
-    <div class="swatches-grid">
+    <p class="dresscode-women-note js-reveal">
+      <span data-lang="cs" class="active">Prosíme vás, zvolte si šaty<br>v některé z těchto barev.</span>
+      <span data-lang="en">We kindly ask you to wear a dress<br>in one of these shades.</span>
+      <span data-lang="ru">Просим вас выбрать платье<br>в одном из этих оттенков.</span>
+    </p>
+    <div class="swatches-grid js-reveal">
       <div class="swatch"><div class="swatch-inner sw-wine"></div></div>
       <div class="swatch"><div class="swatch-inner sw-crimson"></div></div>
       <div class="swatch"><div class="swatch-inner sw-mauve"></div></div>
@@ -1548,8 +1625,6 @@
   document.querySelectorAll(
     '.js-reveal, .detail-card, .map-wrap, .cal-wrap, .gifts-box, .timeline-item, .dresscode-intro, .swatches-grid, .palette-group, .rsvp-box'
   ).forEach(el => io.observe(el));
-
-  /* Timeline line grows when section enters view */
   const lineEl = document.getElementById('timelineLine');
   if (lineEl) {
     const lineObs = new IntersectionObserver(entries => {
@@ -1561,8 +1636,9 @@
   }
 
   setTimeout(() => {
-    document.querySelectorAll('.js-reveal, .palette-group, .cal-wrap, .map-wrap, .detail-card, .gifts-box, .dresscode-intro, .swatches-grid, .rsvp-box')
+    document.querySelectorAll('.js-reveal, .palette-group, .cal-wrap, .map-wrap, .detail-card, .gifts-box, .dresscode-intro, .swatches-grid, .rsvp-box, .timeline-item')
       .forEach(el => el.classList.add('visible'));
+    if (lineEl) lineEl.classList.add('visible');
   }, 3000);
 
   window.addEventListener('load', () => { setLang('cs'); });
