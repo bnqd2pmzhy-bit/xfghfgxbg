@@ -10,7 +10,7 @@
 <style>
   :root {
     --cream:    #E8E0D7;
-    --blush:    #C8A5A4;
+    --blush:    #A77B7A;
     --seal:     #9B7E77;
     --dark:     #5C4840;
     --white:    #FAF8F6;
@@ -204,7 +204,7 @@
   .env-front-body::before {
     content: '';
     position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
-    background: var(--env-fold);
+    background: linear-gradient(135deg, var(--env-side) 0%, var(--envelope) 100%);
     clip-path: polygon(0 100%, 50% 0, 100% 100%);
     z-index: 1;
   }
@@ -850,7 +850,7 @@
         <line x1="0" y1="30" x2="360" y2="30" stroke="#C8A5A4" stroke-width=".5" stroke-dasharray="2 4"/>
         <text x="180" y="13" text-anchor="middle"
           font-family="'Cormorant Garamond', Georgia, serif"
-          font-size="15" fill="#9B7E77" letter-spacing="5" font-weight="300"
+          font-size="20" fill="#9B7E77" letter-spacing="5" font-weight="300"
           font-style="italic">5 · IX · 2026</text>
         <g fill="#C8A5A4">
           <polygon points="180,36 183.5,39.5 180,43 176.5,39.5"/>
@@ -1269,6 +1269,43 @@
   </div>
 </section>
 
+<!-- ══ GIFTS ══ -->
+<section id="gifts">
+  <h2 class="sec-title js-reveal">
+    <span data-lang="cs" class="active">Dary</span>
+    <span data-lang="en">Gifts</span>
+    <span data-lang="ru">Подарки</span>
+  </h2>
+  <p class="sec-sub js-reveal">
+    <span data-lang="cs" class="active">malá poznámka</span>
+    <span data-lang="en">a small note</span>
+    <span data-lang="ru">небольшая заметка</span>
+  </p>
+  <div class="gifts-box js-reveal">
+    <span class="box-heart">🩷</span>
+    <svg class="gifts-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+      <polyline points="20 12 20 22 4 22 4 12"/>
+      <rect x="2" y="7" width="20" height="5"/>
+      <line x1="12" y1="22" x2="12" y2="7"/>
+      <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+      <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+    </svg>
+    <p class="gifts-text" data-lang="cs">
+      Svatební dary přijímáme ve finanční formě –<br>
+      v hotovosti v českých korunách nebo eurech.
+    </p>
+    <p class="gifts-text" data-lang="en">
+      We gratefully accept wedding gifts in financial form –<br>
+      cash in Czech crowns or euros.
+    </p>
+    <p class="gifts-text" data-lang="ru">
+      Свадебные подарки принимаем в денежной форме –<br>
+      наличными в чешских кронах или евро.
+    </p>
+  </div>
+</section>
+
+
 <!-- ══ RSVP ══ -->
 <section id="rsvp">
   <h2 class="sec-title js-reveal">
@@ -1394,41 +1431,7 @@
   </div>
 </section>
 
-<!-- ══ GIFTS ══ -->
-<section id="gifts">
-  <h2 class="sec-title js-reveal">
-    <span data-lang="cs" class="active">Dary</span>
-    <span data-lang="en">Gifts</span>
-    <span data-lang="ru">Подарки</span>
-  </h2>
-  <p class="sec-sub js-reveal">
-    <span data-lang="cs" class="active">malá poznámka</span>
-    <span data-lang="en">a small note</span>
-    <span data-lang="ru">небольшая заметка</span>
-  </p>
-  <div class="gifts-box js-reveal">
-    <span class="box-heart">🩷</span>
-    <svg class="gifts-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-      <polyline points="20 12 20 22 4 22 4 12"/>
-      <rect x="2" y="7" width="20" height="5"/>
-      <line x1="12" y1="22" x2="12" y2="7"/>
-      <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
-      <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
-    </svg>
-    <p class="gifts-text" data-lang="cs">
-      Svatební dary přijímáme ve finanční formě –<br>
-      v hotovosti v českých korunách nebo eurech.
-    </p>
-    <p class="gifts-text" data-lang="en">
-      We gratefully accept wedding gifts in financial form –<br>
-      cash in Czech crowns or euros.
-    </p>
-    <p class="gifts-text" data-lang="ru">
-      Свадебные подарки принимаем в денежной форме –<br>
-      наличными в чешских кронах или евро.
-    </p>
-  </div>
-</section>
+
 
 <!-- ══ FOOTER ══ -->
 <footer>
