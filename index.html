@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
-<!-- saved from url=(0043)file:///Users/torosiaa/Downloads/index.html -->
-<html lang="cs"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anna &amp; Daniel – Save the Date · 5.9.2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./Anna &amp; Daniel – Save the Date · 5.9.2026_files/css2" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Great+Vibes&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
   :root {
     --cream:    #E8E0D7;
@@ -35,1596 +34,6 @@
     padding: 14px 28px; gap: 6px;
     background: linear-gradient(to bottom, rgba(232,224,215,.92) 0%, transparent 100%);
     backdrop-filter: blur(4px);
-  }
-  .lang-btn {
-    border: 1px solid var(--blush); background: transparent;
-    color: var(--seal); font-family: 'Jost', sans-serif;
-    font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
-    padding: 5px 12px; border-radius: 40px; cursor: pointer;
-    transition: background .25s, color .25s;
-  }
-  .lang-btn.active, .lang-btn:hover { background: var(--seal); color: var(--white); }
-
-  /* ── HERO ── */
-  #hero {
-    min-height: 100dvh;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    text-align: center;
-    background: var(--cream);
-    padding: 70px 24px 60px;
-    position: relative;
-  }
-  #hero-bg {
-    position: absolute; inset: 0;
-    background-image: url('hero.png');
-    background-size: cover;
-    background-position: center top;
-    opacity: 0.22;
-    pointer-events: none;
-    z-index: 0;
-  }
-  #hero::before {
-    content: '';
-    position: absolute; inset: 0; pointer-events: none;
-    background:
-      radial-gradient(ellipse 60% 55% at 50% 50%, rgba(200,165,164,.18) 0%, transparent 70%),
-      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239B7E77' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
-  }
-  .hero-inner { position: relative; z-index: 1; width: 100%; }
-  .initials {
-    font-family: 'Jost', sans-serif; font-weight: 200;
-    font-size: .85rem; letter-spacing: .35em; color: var(--seal); text-transform: uppercase;
-    opacity: 0; animation: fadeUp .8s .2s forwards;
-  }
-  .names {
-    font-family: 'Great Vibes', cursive;
-    font-size: clamp(3.4rem, 10vw, 6.5rem);
-    color: var(--dark); line-height: 1.05; margin-top: 12px;
-    opacity: 0; animation: fadeUp .9s .5s forwards;
-  }
-  .save-the-date {
-    font-family: 'Great Vibes', cursive;
-    font-size: clamp(2.2rem, 7vw, 4.2rem);
-    color: var(--seal); margin-top: 24px;
-    opacity: 0; animation: fadeUp .9s .85s forwards;
-  }
-  .hero-sub {
-    font-family: 'Jost', sans-serif; font-weight: 200; font-size: .8rem;
-    letter-spacing: .25em; text-transform: uppercase;
-    color: var(--blush); margin-top: 6px; margin-bottom: 40px;
-    opacity: 0; animation: fadeUp .8s 1.1s forwards;
-  }
-
-  /* ── HERO ORNAMENT ── */
-  .hero-ornament-wrap {
-    opacity: 0;
-    animation: fadeUp .9s 1.1s forwards;
-    margin: 0 auto 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* ══════════════════════════════════════════════
-     ENVELOPE WIDGET
-  ══════════════════════════════════════════════ */
-
-  .env-widget {
-    opacity: 0; animation: fadeUp 1s 1.4s forwards;
-    /* envelope aspect ratio is ~1.6:1 (width:height = 100:62).
-       We want the envelope body to be ~55vh tall, so width = 55vh / 0.62 ≈ 89vh.
-       Cap at 92vw on narrow screens. */
-    width: min(89vh, 92vw);
-    margin: 0 auto;
-    cursor: pointer;
-    position: relative;
-    padding-top: 0;
-  }
-
-  .env-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 62%;   /* keeps envelope aspect ratio */
-    overflow: visible;
-  }
-
-  .env-back-body {
-    position: absolute; inset: 0;
-    background: var(--envelope);
-    border-radius: 4px;
-    border: 1px solid rgba(155,126,119,.25);
-    box-shadow: 0 10px 40px rgba(155,126,119,.2), 0 2px 8px rgba(155,126,119,.1);
-    overflow: hidden;
-    z-index: 1;
-  }
-  .env-back-body::before {
-    content: '';
-    position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
-    background: var(--env-fold);
-    clip-path: polygon(0 100%, 50% 0, 100% 100%);
-    z-index: 1;
-  }
-  .env-back-body .env-left,
-  .env-back-body .env-right {
-    position: absolute; top: 0; bottom: 0; width: 50%; z-index: 2;
-  }
-  .env-back-body .env-left {
-    left: 0;
-    background: linear-gradient(135deg, var(--env-side) 0%, var(--envelope) 100%);
-    clip-path: polygon(0 0, 0 100%, 100% 50%);
-  }
-  .env-back-body .env-right {
-    right: 0;
-    background: linear-gradient(225deg, var(--env-side) 0%, var(--envelope) 100%);
-    clip-path: polygon(100% 0, 100% 100%, 0 50%);
-  }
-
-  .env-letter {
-    position: absolute;
-    left: 5%;
-    width: 90%;
-    top: 10%;
-    background: var(--white);
-    border-radius: 3px;
-    border: 1px solid rgba(200,165,164,.3);
-    box-shadow: 0 6px 32px rgba(155,126,119,.16);
-    padding: clamp(20px, 4vw, 52px) clamp(16px, 5vw, 56px) clamp(18px, 3.5vw, 48px);
-    text-align: center;
-    z-index: 2;
-    transform: translateY(0);
-    opacity: 0;
-    transition: transform 1.1s cubic-bezier(.33,1,.68,1) .35s, opacity .3s ease .35s;
-  }
-
-  .env-widget.opened .env-letter {
-    transform: translateY(calc(-90% - 80px));
-    opacity: 1;
-  }
-
-  .letter-names {
-    font-family: 'Great Vibes', cursive;
-    font-size: clamp(1.5rem, 5vw, 2.1rem);
-    color: var(--seal); line-height: 1.1;
-  }
-  .letter-divider { width: 40px; height: 1px; background: var(--blush); margin: 10px auto; }
-  /* ENLARGED letter body font */
-  .letter-body {
-    font-size: clamp(.95rem, 2.5vw, 1.5rem);
-    font-weight: 400; line-height: 1.9; color: var(--dark); font-style: italic;
-  }
-
-  .env-front-body {
-    position: absolute; inset: 0;
-    background: transparent;
-    z-index: 3;
-    pointer-events: none;
-    overflow: hidden;
-    border-radius: 4px;
-  }
-  .env-front-body::before {
-    content: '';
-    position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
-    background: linear-gradient(135deg, var(--env-side) 0%, var(--envelope) 100%);
-    clip-path: polygon(0 100%, 50% 0, 100% 100%);
-    z-index: 1;
-  }
-  .env-front-left, .env-front-right {
-    position: absolute; top: 0; bottom: 0; width: 50%; z-index: 2;
-  }
-  .env-front-left {
-    left: 0;
-    background: linear-gradient(135deg, var(--env-side) 0%, var(--envelope) 100%);
-    clip-path: polygon(0 0, 0 100%, 100% 50%);
-  }
-  .env-front-right {
-    right: 0;
-    background: linear-gradient(225deg, var(--env-side) 0%, var(--envelope) 100%);
-    clip-path: polygon(100% 0, 100% 100%, 0 50%);
-  }
-
-  .env-flap {
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 56%;
-    z-index: 5;
-    transform-origin: top center;
-    transition: transform .85s cubic-bezier(.4,0,.2,1);
-  }
-  .env-flap::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(165deg, #e0d8cf 0%, var(--envelope) 65%);
-    clip-path: polygon(0 0, 100% 0, 50% 100%);
-    border-bottom: 1px solid rgba(155,126,119,.12);
-  }
-
-  .env-seal {
-    position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
-    width: clamp(44px, 7vw, 80px); height: clamp(44px, 7vw, 80px); z-index: 6;
-    transition: opacity .3s ease .1s;
-    filter: drop-shadow(0 3px 7px rgba(74,48,40,.3));
-  }
-
-  .env-widget.opened .env-flap {
-    transform: rotateX(-180deg);
-    z-index: 1;
-  }
-  .env-widget.opened .env-seal { opacity: 0; pointer-events: none; }
-  .env-widget.opened .env-front-body { opacity: 0.7; }
-
-  .env-hint {
-    font-family: 'Jost', sans-serif; font-weight: 200;
-    font-size: .68rem; letter-spacing: .22em; text-transform: uppercase;
-    color: var(--blush); margin-top: 22px;
-    transition: opacity .4s;
-    position: relative; z-index: 5;
-  }
-  .env-widget.opened .env-hint { opacity: 0; pointer-events: none; }
-
-  /* ── SCROLL CUE ── */
-  .scroll-cue {
-    position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 4px;
-    opacity: 0; animation: fadeIn 1s 2.3s forwards;
-  }
-  .scroll-cue span {
-    display: block; width: 10px; height: 10px;
-    border-right: 1.5px solid var(--blush); border-bottom: 1.5px solid var(--blush);
-    transform: rotate(45deg); animation: bounce 1.6s infinite;
-  }
-  .scroll-cue span:nth-child(2) { animation-delay: .2s; opacity: .6; }
-  .scroll-cue span:nth-child(3) { animation-delay: .4s; opacity: .3; }
-
-  /* ── DETAILS ── */
-  #details { background: var(--cream); padding: 100px 24px; text-align: center; }
-  .details-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 48px 56px; max-width: 820px; margin: 0 auto 64px;
-  }
-  .detail-card { opacity: 0; transform: translateY(24px); transition: opacity .7s, transform .7s; }
-  .detail-card.visible { opacity: 1; transform: none; }
-  .detail-icon { width: 42px; height: 42px; margin: 0 auto 16px; color: var(--seal); }
-  .detail-label {
-    font-family: 'Jost', sans-serif; font-weight: 300; font-size: .85rem;
-    letter-spacing: .3em; text-transform: uppercase; color: var(--seal); margin-bottom: 10px;
-  }
-  /* ENLARGED detail values */
-  .detail-value { font-size: clamp(1.15rem, 2.8vw, 1.35rem); font-weight: 500; line-height: 1.6; }
-  .detail-note { font-size: clamp(.92rem, 2.2vw, 1.05rem); font-style: italic; color: var(--blush); margin-top: 8px; font-weight: 300; }
-  .map-wrap {
-    max-width: 720px; margin: 0 auto; border-radius: 6px; overflow: hidden;
-    box-shadow: 0 8px 32px rgba(155,126,119,.18);
-    opacity: 0; transform: translateY(20px); transition: opacity .8s .2s, transform .8s .2s; height: 320px;
-  }
-  .map-wrap.visible { opacity: 1; transform: none; }
-  .map-wrap iframe { width: 100%; height: 100%; border: none; }
-
-  /* ── TIMELINE ── */
-  #timeline { background: var(--white); padding: 100px 24px; text-align: center; overflow: hidden; }
-  .timeline-wrap {
-    max-width: 500px; margin: 0 auto;
-    position: relative;
-  }
-
-  .timeline-line {
-    position: absolute;
-    left: 50%; top: 0; bottom: 0;
-    width: 1px;
-    transform: translateX(-50%);
-    background: linear-gradient(to bottom, transparent, var(--blush) 8%, var(--blush) 92%, transparent);
-    transform-origin: top center;
-    scale: 1 0;
-    transition: scale 1.4s cubic-bezier(.22,1,.36,1);
-  }
-  .timeline-line.visible { scale: 1 1; }
-
-  .timeline-item {
-    display: flex; align-items: center;
-    margin-bottom: 60px;
-    opacity: 0;
-    transition: opacity .6s ease, transform .6s cubic-bezier(.33,1,.68,1);
-  }
-  .timeline-item:nth-child(odd)  { flex-direction: row;         transform: translateX(-32px); }
-  .timeline-item:nth-child(even) { flex-direction: row-reverse; transform: translateX(32px);  }
-  .timeline-item.visible { opacity: 1; transform: translateX(0); }
-
-  .timeline-content {
-    width: calc(50% - 44px);
-  }
-  .timeline-item:nth-child(odd)  .timeline-content:first-child  { text-align: right; }
-  .timeline-item:nth-child(even) .timeline-content:last-child   { text-align: left;  }
-
-  .timeline-time {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.6rem, 4.5vw, 2.2rem);
-    font-weight: 500;
-    color: var(--dark);
-    display: block;
-    transition: color .3s;
-  }
-  .timeline-label {
-    font-family: 'Jost', sans-serif; font-weight: 300;
-    font-size: .82rem; letter-spacing: .12em;
-    color: var(--seal); margin-top: 3px;
-    text-transform: uppercase;
-  }
-
-  .timeline-icon-wrap {
-    width: 88px; flex-shrink: 0;
-    display: flex; justify-content: center; align-items: center;
-    position: relative; z-index: 2;
-  }
-  .timeline-icon {
-    width: 50px; height: 50px;
-    border: 1.5px solid var(--blush);
-    border-radius: 50%;
-    background: var(--white);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--seal);
-    position: relative;
-    transition: background .35s, border-color .35s, color .35s, box-shadow .35s, transform .35s;
-    box-shadow: 0 0 0 0 rgba(200,165,164,0);
-  }
-  .timeline-icon svg { width: 22px; height: 22px; transition: transform .35s; }
-
-  .timeline-icon::after {
-    content: '';
-    position: absolute; inset: -6px;
-    border-radius: 50%;
-    border: 1px solid rgba(200,165,164,0);
-    transition: border-color .35s, inset .35s;
-  }
-
-  .timeline-item.visible .timeline-icon {
-    animation: iconPop .55s cubic-bezier(.34,1.56,.64,1) both;
-  }
-  .timeline-item.visible .timeline-icon:hover {
-    background: var(--seal);
-    border-color: var(--seal);
-    color: var(--white);
-    transform: scale(1.12);
-    box-shadow: 0 6px 22px rgba(155,126,119,.28);
-  }
-  .timeline-item.visible .timeline-icon:hover::after {
-    inset: -10px;
-    border-color: rgba(200,165,164,.4);
-  }
-  .timeline-item.visible .timeline-icon:hover svg { transform: scale(1.1); }
-
-  .timeline-item.visible .timeline-time {
-    animation: shimmerText .8s ease both;
-  }
-
-  .timeline-dot {
-    position: absolute;
-    left: 50%; top: 50%;
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--blush);
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform .5s cubic-bezier(.34,1.56,.64,1);
-    z-index: 3;
-  }
-  .timeline-item.visible .timeline-dot { transform: translate(-50%, -50%) scale(1); }
-
-  @keyframes iconPop {
-    0%   { transform: scale(0.4); opacity: 0; }
-    60%  { transform: scale(1.15); }
-    100% { transform: scale(1); opacity: 1; }
-  }
-  @keyframes shimmerText {
-    0%   { color: var(--blush); }
-    60%  { color: var(--seal); }
-    100% { color: var(--dark); }
-  }
-
-  /* ── DRESS CODE ── */
-  #dresscode { background: var(--cream); padding: 100px 24px; text-align: center; }
-  /* ENLARGED dresscode intro */
-  .dresscode-intro {
-    max-width: 500px; margin: 0 auto 48px;
-    font-size: clamp(1.05rem, 2.6vw, 1.25rem);
-    font-weight: 400; line-height: 1.85; font-style: italic;
-    color: var(--dark);
-    opacity: 0; transform: translateY(16px); transition: opacity .7s, transform .7s;
-  }
-  .dresscode-intro.visible { opacity: 1; transform: none; }
-  .swatches-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 10px; max-width: 300px; margin: 0 auto;
-    opacity: 0; transform: translateY(20px); transition: opacity .8s .1s, transform .8s .1s;
-  }
-  .swatches-grid.visible { opacity: 1; transform: none; }
-  .swatch {
-    aspect-ratio: 1;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 4px 16px rgba(155,126,119,.15);
-    transition: transform .3s, box-shadow .3s;
-  }
-  .swatch:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(155,126,119,.25); }
-  .swatch-inner {
-    width: 100%; height: 100%;
-    background-size: cover; background-position: center;
-  }
-  .sw-wine     { background: linear-gradient(145deg, #6b2d35 0%, #5a2028 40%, #652830 70%, #4e1c24 100%); }
-  .sw-crimson  { background: linear-gradient(145deg, #b02250 0%, #961a42 40%, #a81e48 70%, #841638 100%); }
-  .sw-mauve    { background: linear-gradient(145deg, #8c5f60 0%, #7a5052 40%, #845a5a 70%, #6e4648 100%); }
-  .sw-powder   { background: linear-gradient(145deg, #d4aead 0%, #c49e9c 40%, #cca6a4 70%, #b89290 100%); }
-  .sw-burgundy { background: linear-gradient(145deg, #420012 0%, #30000c 40%, #3c0010 70%, #280008 100%); }
-  .sw-rosemauve{ background: linear-gradient(145deg, #b07e82 0%, #9c6e72 40%, #a8767a 70%, #906268 100%); }
-  .sw-stone    { background: linear-gradient(145deg, #969088 0%, #847e78 40%, #8e8880 70%, #787268 100%); }
-  .palette-group { max-width: 300px; margin: 0 auto 40px; }
-  .palette-group:last-child { margin-bottom: 0; }
-  .palette-label {
-    font-family: 'Jost', sans-serif; font-weight: 300; font-size: .82rem;
-    letter-spacing: .3em; text-transform: uppercase; color: var(--seal);
-    margin-bottom: 14px;
-  }
-  .swatches-wrap {
-    max-width: 300px; margin: 0 auto;
-  }
-
-  /* ENLARGED women note */
-  .dresscode-women-note {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.05rem, 2.6vw, 1.22rem);
-    font-weight: 400; font-style: italic;
-    line-height: 1.9; color: var(--seal);
-    margin-bottom: 20px;
-    letter-spacing: .03em;
-  }
-  /* ENLARGED men note */
-  .men-note {
-    margin-top: 22px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.05rem, 2.6vw, 1.22rem);
-    font-weight: 400;
-    line-height: 2.1;
-    color: var(--dark);
-    letter-spacing: .04em;
-    text-align: center;
-  }
-  .men-note .men-line {
-    display: block;
-  }
-  .men-suit-swatches {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    margin-left: 8px;
-    vertical-align: middle;
-  }
-  .men-suit-sep {
-    font-size: .7em;
-    color: var(--blush);
-  }
-  .men-note .men-accent {
-    display: block;
-    font-style: italic;
-    color: var(--seal);
-    font-size: .96em;
-    margin-top: 2px;
-  }
-  .men-note .men-tie-swatches {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    margin-top: 14px;
-    flex-wrap: wrap;
-  }
-  .men-tie-dot {
-    width: 18px; height: 18px;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(92,72,64,.2);
-    flex-shrink: 0;
-  }
-  /* ENLARGED tie label */
-  .men-tie-label {
-    display: block;
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: .72rem;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    color: var(--blush);
-    margin-top: 10px;
-  }
-
-  .swatch::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,.18) 0%, transparent 50%, rgba(255,255,255,.06) 100%);
-    pointer-events: none;
-  }
-
-  /* ── RSVP ── */
-  #rsvp {
-    background: var(--white);
-    padding: 100px 24px; text-align: center;
-    position: relative;
-  }
-  #rsvp::before {
-    content: '';
-    position: absolute; inset: 0;
-    background-image: url('generated.png');
-    background-size: cover;
-    background-position: center top;
-    opacity: 0.18;
-    pointer-events: none;
-    z-index: 0;
-  }
-  #rsvp > * { position: relative; z-index: 1; }
-  .rsvp-box {
-    max-width: 520px; margin: 0 auto;
-    border: 1px solid rgba(200,165,164,.45); border-radius: 8px; padding: 52px 44px;
-    background: var(--cream);
-    opacity: 0; transform: translateY(20px); transition: opacity .7s, transform .7s;
-    position: relative;
-  }
-  .rsvp-box::before { content: none; }
-  .box-heart {
-    position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
-    font-size: 1.6rem; line-height: 1;
-    padding: 0 8px;
-    filter: sepia(1) saturate(0.6) brightness(1.1) hue-rotate(320deg);
-  }
-  .rsvp-box.visible { opacity: 1; transform: none; }
-  /* ENLARGED rsvp deadline */
-  .rsvp-deadline {
-    font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.05rem;
-    letter-spacing: .05em; color: var(--dark); margin-bottom: 32px; line-height: 1.7;
-  }
-  .rsvp-deadline a {
-    color: var(--seal); text-decoration: none; border-bottom: 1px solid var(--blush);
-    transition: color .2s, border-color .2s;
-  }
-  .rsvp-deadline a:hover { color: var(--dark); border-color: var(--seal); }
-  .rsvp-field {
-    width: 100%; padding: 14px 18px;
-    border: 1px solid rgba(200,165,164,.5);
-    border-radius: 40px;
-    background: var(--white);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem; color: var(--dark);
-    outline: none; margin-bottom: 20px;
-    transition: border-color .25s;
-  }
-  .rsvp-field:focus { border-color: var(--seal); }
-  .rsvp-field::placeholder { color: var(--blush); font-style: italic; }
-  .rsvp-question {
-    font-family: 'Jost', sans-serif; font-weight: 300; font-size: .78rem;
-    letter-spacing: .12em; text-transform: uppercase;
-    color: var(--dark); margin-bottom: 14px; text-align: left;
-  }
-  .rsvp-options { margin-bottom: 28px; }
-  .rsvp-option {
-    display: flex; align-items: center; gap: 12px;
-    cursor: pointer; margin-bottom: 10px; text-align: left;
-    font-size: clamp(.88rem, 2.2vw, 1rem); font-weight: 300; color: var(--dark);
-    padding: 10px 16px; border-radius: 40px;
-    border: 1px solid rgba(200,165,164,.3);
-    background: transparent;
-    transition: background .2s, border-color .2s;
-  }
-  .rsvp-option:hover { background: rgba(200,165,164,.1); }
-  .rsvp-option.selected { background: var(--seal); color: var(--white); border-color: var(--seal); }
-  .rsvp-option.selected .rsvp-radio { border-color: var(--white); background: var(--white); }
-  .rsvp-radio {
-    width: 16px; height: 16px; border-radius: 50%;
-    border: 1.5px solid var(--blush); flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    transition: background .2s, border-color .2s;
-  }
-  .rsvp-radio.checked::after {
-    content: ''; display: block; width: 8px; height: 8px;
-    border-radius: 50%; background: var(--seal);
-  }
-  .rsvp-option.selected .rsvp-radio.checked::after { background: var(--seal); }
-  .alcohol-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 8px; margin-bottom: 28px;
-  }
-  .alcohol-btn {
-    padding: 10px 14px; border-radius: 40px;
-    border: 1px solid rgba(200,165,164,.4);
-    background: transparent; cursor: pointer;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: .95rem; color: var(--dark);
-    transition: background .2s, border-color .2s, color .2s;
-    text-align: center;
-  }
-  .alcohol-btn:hover { background: rgba(200,165,164,.1); }
-  .alcohol-btn.selected { background: var(--seal); color: var(--white); border-color: var(--seal); }
-  .rsvp-submit {
-    width: 100%; padding: 15px 32px;
-    border: 1px solid var(--seal);
-    border-radius: 40px;
-    background: transparent; cursor: pointer;
-    font-family: 'Jost', sans-serif; font-weight: 300;
-    font-size: .75rem; letter-spacing: .2em; text-transform: uppercase;
-    color: var(--seal);
-    transition: background .3s, color .3s;
-    margin-top: 8px;
-  }
-  .rsvp-submit:hover { background: var(--seal); color: var(--white); }
-  .rsvp-success {
-    display: none; text-align: center; padding: 10px 0;
-  }
-  .rsvp-success-title {
-    font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--seal);
-    margin-bottom: 10px;
-  }
-  .rsvp-success-sub {
-    font-family: 'Cormorant Garamond', serif; font-size: .92rem;
-    font-weight: 300; font-style: italic; color: var(--dark);
-    line-height: 1.7; margin-bottom: 22px;
-  }
-  .mail-preview {
-    background: var(--white); border: 1px solid rgba(200,165,164,.4);
-    border-radius: 8px; padding: 20px 22px;
-    font-family: 'Cormorant Garamond', serif; font-size: .95rem;
-    font-weight: 300; line-height: 1.85; color: var(--dark);
-    text-align: left; white-space: pre-wrap; word-break: break-word;
-    margin-bottom: 16px;
-  }
-  .mail-copy-btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 28px; border-radius: 40px;
-    border: 1px solid var(--seal); background: transparent;
-    font-family: 'Jost', sans-serif; font-weight: 300;
-    font-size: .73rem; letter-spacing: .2em; text-transform: uppercase;
-    color: var(--seal); cursor: pointer;
-    transition: background .3s, color .3s;
-  }
-  .mail-copy-btn:hover { background: var(--seal); color: var(--white); }
-  .mail-copied-hint {
-    margin-top: 12px;
-    font-family: 'Jost', sans-serif; font-weight: 200; font-size: .72rem;
-    letter-spacing: .15em; color: var(--seal);
-  }
-
-  /* ── GIFTS ── */
-  #gifts { background: var(--cream); padding: 100px 24px; text-align: center; }
-  .gifts-box {
-    max-width: 520px; margin: 0 auto;
-    border: 1px solid rgba(200,165,164,.45); border-radius: 6px; padding: 48px 40px;
-    background: var(--white);
-    opacity: 0; transform: translateY(20px); transition: opacity .7s, transform .7s;
-    position: relative;
-  }
-  .gifts-box::before { content: none; }
-  .gifts-box.visible { opacity: 1; transform: none; }
-  .gifts-icon { width: 40px; height: 40px; margin: 0 auto 16px; color: var(--seal); }
-  /* ENLARGED gifts text */
-  .gifts-text { font-size: clamp(1.05rem, 2.6vw, 1.2rem); font-weight: 400; line-height: 1.85; font-style: italic; }
-
-  /* ── SECTION TITLES ── */
-  .sec-title {
-    font-family: 'Great Vibes', cursive; font-size: clamp(2rem, 6vw, 3.2rem);
-    color: var(--seal); margin-bottom: 12px;
-  }
-  /* ENLARGED sec-sub */
-  .sec-sub {
-    font-family: 'Jost', sans-serif; font-weight: 300; font-size: .82rem;
-    letter-spacing: .3em; text-transform: uppercase; color: var(--blush); margin-bottom: 56px;
-  }
-  .js-reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s, transform .8s; }
-  .js-reveal.visible { opacity: 1; transform: none; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--seal); color: rgba(250,248,246,.75);
-    text-align: center; padding: 40px 24px;
-    font-family: 'Jost', sans-serif; font-weight: 200; font-size: .75rem; letter-spacing: .15em;
-  }
-  footer .footer-names {
-    font-family: 'Great Vibes', cursive; font-size: 2rem;
-    color: var(--white); letter-spacing: 0; display: block; margin-bottom: 8px;
-  }
-
-  /* ── LANG VISIBILITY ── */
-  [data-lang] { display: none; }
-  [data-lang].active { display: block; }
-  span[data-lang].active { display: inline; }
-
-  /* ── KEYFRAMES ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  @keyframes bounce {
-    0%,100% { transform: rotate(45deg) translateY(0); }
-    50%      { transform: rotate(45deg) translateY(5px); }
-  }
-
-  /* ── CALENDAR ── */
-  .cal-wrap {
-    max-width: 340px; margin: 64px auto 0;
-    opacity: 0; transform: translateY(20px); transition: opacity .8s .1s, transform .8s .1s;
-  }
-  .cal-wrap.visible { opacity: 1; transform: none; }
-  .cal-wrap svg { width: 100%; height: auto; display: block; border-radius: 10px;
-    box-shadow: 0 8px 36px rgba(155,126,119,.22); }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    #hero { padding: 80px 20px 60px; }
-    #details, #timeline, #dresscode, #rsvp, #gifts { padding: 70px 20px; }
-    .names { font-size: clamp(2.8rem, 9vw, 4.5rem); }
-    .save-the-date { font-size: clamp(2rem, 6vw, 3rem); }
-    .details-grid { gap: 32px 24px; }
-    .map-wrap { height: 240px; }
-    .cal-wrap { max-width: 85vw; }
-    .timeline-wrap { max-width: 100%; }
-    .timeline-content { width: calc(50% - 36px); }
-    .timeline-time { font-size: 1.3rem; }
-    .timeline-icon { width: 42px; height: 42px; }
-    .timeline-icon-wrap { width: 72px; }
-    .swatches-grid { max-width: 280px; }
-    .palette-group { max-width: 280px; }
-    .rsvp-box { padding: 40px 24px; }
-    .gifts-box { padding: 40px 28px; }
-    /* env-widget is fully responsive via vh/vw, no override needed */
-  }
-
-  @media (max-width: 520px) {
-    #hero { padding: 70px 16px 50px; }
-    #details, #timeline, #dresscode, #rsvp, #gifts { padding: 56px 16px; }
-    .names { font-size: clamp(2.4rem, 11vw, 3.5rem); }
-    .save-the-date { font-size: clamp(1.8rem, 8vw, 2.6rem); }
-    .initials { font-size: .75rem; letter-spacing: .25em; }
-    .sec-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
-    .sec-sub { font-size: .72rem; margin-bottom: 32px; }
-    .details-grid { grid-template-columns: 1fr; gap: 28px; }
-    .map-wrap { height: 200px; }
-    .cal-wrap { max-width: 96vw; }
-    .timeline-wrap { max-width: 100%; }
-    .timeline-line { display: none; }
-    .timeline-item,
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-      flex-direction: column !important;
-      align-items: center;
-      text-align: center;
-      margin-bottom: 32px;
-      transform: translateY(20px) !important;
-    }
-    .timeline-content,
-    .timeline-item:nth-child(odd)  .timeline-content:first-child,
-    .timeline-item:nth-child(even) .timeline-content:last-child {
-      width: 100%; text-align: center;
-    }
-    .timeline-content[style*="visibility:hidden"] { display: none; }
-    .timeline-icon-wrap { width: auto; margin: 8px 0; }
-    .timeline-dot { display: none; }
-    .dresscode-intro { font-size: .95rem; margin-bottom: 32px; }
-    .swatches-grid { max-width: 96vw; gap: 8px; grid-template-columns: repeat(3, 1fr); }
-    .palette-group { max-width: 96vw; }
-    .men-note { font-size: .95rem; }
-    .rsvp-box { padding: 36px 16px; }
-    .rsvp-field { padding: 12px 14px; font-size: .95rem; }
-    .alcohol-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
-    .alcohol-btn { font-size: .88rem; padding: 8px 10px; }
-    .gifts-box { padding: 32px 16px; }
-    /* env-widget responsive */
-    /* env-letter padding handled by clamp */
-    .lang-bar { padding: 10px 14px; gap: 4px; }
-    .lang-btn { font-size: .62rem; padding: 4px 10px; }
-    .mail-preview { font-size: .85rem; padding: 16px 14px; }
-  }
-
-  @media (max-width: 380px) {
-    .names { font-size: 2.2rem; }
-    .save-the-date { font-size: 1.6rem; }
-    .sec-title { font-size: 1.6rem; }
-    .swatches-grid { grid-template-columns: repeat(2, 1fr); }
-    .rsvp-box { padding: 28px 12px; }
-    .alcohol-grid { grid-template-columns: 1fr; }
-  }
-</style>
-</head>
-<body>
-
-<!-- LANG BAR -->
-<nav class="lang-bar">
-  <button class="lang-btn active" onclick="setLang(&#39;cs&#39;)">CZ</button>
-  <button class="lang-btn" onclick="setLang(&#39;en&#39;)">EN</button>
-  <button class="lang-btn" onclick="setLang(&#39;ru&#39;)">RU</button>
-</nav>
-
-<!-- ══ HERO ══ -->
-<section id="hero">
-  <div id="hero-bg"></div>
-  <div class="hero-inner">
-    <p class="initials">A&nbsp;&nbsp;|&nbsp;&nbsp;D</p>
-    <h1 class="names">Anna &amp; Daniel</h1>
-    <p class="save-the-date">Save the Date</p>
-
-    <!-- Date ornament -->
-    <div class="hero-ornament-wrap" aria-label="5. září 2026">
-      <svg viewBox="0 0 360 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:min(360px,84vw);display:block;">
-        <line x1="0" y1="18" x2="360" y2="18" stroke="#C8A5A4" stroke-width=".5" stroke-dasharray="2 4"></line>
-        <line x1="0" y1="30" x2="360" y2="30" stroke="#C8A5A4" stroke-width=".5" stroke-dasharray="2 4"></line>
-        <text x="180" y="13" text-anchor="middle" font-family="&#39;Cormorant Garamond&#39;, Georgia, serif" font-size="20" fill="#9B7E77" letter-spacing="5" font-weight="300" font-style="italic">5 · IX · 2026</text>
-        <g fill="#C8A5A4">
-          <polygon points="180,36 183.5,39.5 180,43 176.5,39.5"></polygon>
-          <polygon points="167,37.5 169.5,39.5 167,41.5 164.5,39.5"></polygon>
-          <polygon points="193,37.5 195.5,39.5 193,41.5 190.5,39.5"></polygon>
-          <polygon points="155,38 157,39.5 155,41 153,39.5"></polygon>
-          <polygon points="205,38 207,39.5 205,41 203,39.5"></polygon>
-          <polygon points="144,38.5 145.5,39.5 144,40.5 142.5,39.5"></polygon>
-          <polygon points="216,38.5 217.5,39.5 216,40.5 214.5,39.5"></polygon>
-          <polygon points="134,39 135,39.5 134,40 133,39.5"></polygon>
-          <polygon points="226,39 227,39.5 226,40 225,39.5"></polygon>
-        </g>
-      </svg>
-    </div>
-
-    <!-- ══ ENVELOPE WIDGET ══ -->
-    <div class="env-widget opened" id="envWidget" onclick="openEnvelope()">
-
-      <div class="env-container" style="position:relative;">
-
-        <div class="env-letter" id="envLetter">
-          <p class="letter-body active" data-lang="cs">
-            Milovaní přátelé a rodino!<br>
-            Brzy se v našem životě uskuteční<br>
-            důležitá událost – naše svatba!<br>
-            Věříme a doufáme, že tento den bude<br>
-            krásným začátkem dlouhého a&nbsp;šťastného života.<br><br>
-            <em>Těšíme se na vás!</em>
-          </p>
-          <p class="letter-body" data-lang="en">
-            Dear friends and family!<br>
-            A very important event is soon to take place<br>
-            in our lives – our wedding!<br>
-            We believe and hope that this day will be<br>
-            a beautiful beginning of a long and happy life.<br><br>
-            <em>We look forward to seeing you!</em>
-          </p>
-          <p class="letter-body" data-lang="ru">
-            Дорогие друзья и родные!<br>
-            В нашей жизни скоро произойдёт<br>
-            важное событие — наша свадьба!<br>
-            Мы верим и надеемся, что этот день станет<br>
-            прекрасным началом долгой и счастливой жизни.<br><br>
-            <em>Мы ждём вас!</em>
-          </p>
-        </div>
-
-        <div class="env-back-body">
-          <div class="env-left"></div>
-          <div class="env-right"></div>
-        </div>
-
-        <div class="env-front-body" id="envFrontBody">
-          <div class="env-front-left"></div>
-          <div class="env-front-right"></div>
-        </div>
-
-        <div class="env-flap" id="envFlap" style="transform: rotateX(-180deg); z-index: 1;">
-          <svg class="env-seal" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <path id="sc" d="M 40,40 m -28,0 a 28,28 0 1,1 56,0 a 28,28 0 1,1 -56,0"></path>
-            </defs>
-            <circle cx="40" cy="40" r="38" fill="var(--seal)"></circle>
-            <circle cx="40" cy="40" r="33" fill="none" stroke="rgba(250,248,246,.3)" stroke-width=".8"></circle>
-            <text font-family="&#39;Jost&#39;,sans-serif" font-size="5.5" letter-spacing="2.5" fill="rgba(250,248,246,.75)">
-              <textpath href="#sc">· 5 · 9 · 2026 · A &amp; D · 5 · 9 · 2026 ·</textpath>
-            </text>
-            <text x="40" y="37" text-anchor="middle" font-family="&#39;Cormorant Garamond&#39;,serif" font-size="13" font-weight="300" fill="var(--white)">5.9.</text>
-            <text x="40" y="51" text-anchor="middle" font-family="&#39;Jost&#39;,sans-serif" font-size="7" font-weight="200" letter-spacing="2" fill="var(--white)">2026</text>
-          </svg>
-        </div>
-
-      </div>
-
-      <p class="env-hint">
-        <span data-lang="cs" class="active">— scrollujte pro otevření —</span>
-        <span data-lang="en" class="">— scroll to open —</span>
-        <span data-lang="ru" class="">— прокрутите, чтобы открыть —</span>
-      </p>
-    </div>
-
-  </div>
-  <div class="scroll-cue">
-    <span></span><span></span><span></span>
-  </div>
-</section>
-
-<!-- ══ DETAILS ══ -->
-<section id="details">
-  <h2 class="sec-title js-reveal visible">
-    <span data-lang="cs" class="active">Podrobnosti</span>
-    <span data-lang="en" class="">Details</span>
-    <span data-lang="ru" class="">Детали</span>
-  </h2>
-<!--  <p class="sec-sub js-reveal">-->
-<!--    <span data-lang="cs" class="active">kdy &amp; kde</span>-->
-<!--    <span data-lang="en">when &amp; where</span>-->
-<!--    <span data-lang="ru">когда &amp; где</span>-->
-<!--  </p>-->
-  <div class="details-grid">
-    <div class="detail-card js-reveal visible">
-      <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-        <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-        <line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line>
-        <line x1="3" y1="10" x2="21" y2="10"></line>
-      </svg>
-      <p class="detail-label">
-        <span data-lang="cs" class="active">Datum</span>
-        <span data-lang="en" class="">Date</span>
-        <span data-lang="ru" class="">Дата</span>
-      </p>
-      <p class="detail-value">5. září 2026<br><span style="font-style:italic;font-size:.88em">sobota</span></p>
-    </div>
-    <div class="detail-card js-reveal visible" style="transition-delay:.12s">
-      <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-        <circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15.5 15.5"></polyline>
-      </svg>
-      <p class="detail-label">
-        <span data-lang="cs" class="active">Čas</span>
-        <span data-lang="en" class="">Time</span>
-        <span data-lang="ru" class="">Время</span>
-      </p>
-      <p class="detail-value">13:00</p>
-      <p class="detail-note">
-        <span data-lang="cs" class="active">Prosíme o příchod přibližně o půl hodiny dříve.</span>
-        <span data-lang="en" class="">Please arrive approximately half an hour early.</span>
-        <span data-lang="ru" class="">Просим прийти примерно на полчаса раньше.</span>
-      </p>
-    </div>
-    <div class="detail-card js-reveal visible" style="transition-delay:.24s">
-      <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-        <path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"></path>
-        <circle cx="12" cy="10" r="3"></circle>
-      </svg>
-      <p class="detail-label">
-        <span data-lang="cs" class="active">Místo</span>
-        <span data-lang="en" class="">Venue</span>
-        <span data-lang="ru" class="">Место</span>
-      </p>
-      <p class="detail-value">Dvůr Gigant Záluží<br>
-        <span style="font-size:.85em;font-style:italic">Kotovice – Záluží 1, 333 01 Stod</span>
-      </p>
-      <p class="detail-note" style="margin-top:10px;"></p>
-    </div>
-  </div>
-  <div class="map-wrap js-reveal visible">
-    <iframe src="./Anna &amp; Daniel – Save the Date · 5.9.2026_files/embed.html" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Dvůr Gigant Záluží">
-    </iframe>
-  </div>
-
-  <!-- ══ CALENDAR ══ -->
-  <div class="cal-wrap js-reveal visible" style="transition-delay:.15s">
-    <svg xmlns="http://www.w3.org/2000/svg" width="440" height="688" viewBox="0 0 440 688">
-      <rect width="440" height="688" fill="#E8E0D7"></rect>
-      <rect x="28" y="60" width="384" height="560" rx="10" fill="none" stroke="#9B7E77" stroke-width="2"></rect>
-      <rect x="35" y="67" width="370" height="546" rx="7" fill="none" stroke="#9B7E77" stroke-width="0.8"></rect>
-      <text x="220" y="122" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#9B7E77" font-style="italic">Září</text>
-      <text x="65" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#9B7E77" font-style="italic">Po</text>
-      <text x="120" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#9B7E77" font-style="italic">Út</text>
-      <text x="175" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#9B7E77" font-style="italic">St</text>
-      <text x="230" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#9B7E77" font-style="italic">Čt</text>
-      <text x="285" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#9B7E77" font-style="italic">Pá</text>
-      <text x="340" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#9B7E77" font-style="italic">So</text>
-      <text x="395" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#9B7E77" font-style="italic">Ne</text>
-      <text x="120" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">1</text>
-      <text x="175" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">2</text>
-      <text x="230" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">3</text>
-      <text x="285" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">4</text>
-      <circle cx="340" cy="204" r="20" fill="#C8A5A4"></circle>
-      <circle cx="340" cy="204" r="20" fill="none" stroke="#9B7E77" stroke-width="1.2"></circle>
-      <text x="340" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#E8E0D7" font-style="italic">5</text>
-      <text x="395" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">6</text>
-      <text x="65" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">7</text>
-      <text x="120" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">8</text>
-      <text x="175" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">9</text>
-      <text x="230" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">10</text>
-      <text x="285" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">11</text>
-      <text x="340" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">12</text>
-      <text x="395" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">13</text>
-      <text x="65" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">14</text>
-      <text x="120" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">15</text>
-      <text x="175" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">16</text>
-      <text x="230" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">17</text>
-      <text x="285" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">18</text>
-      <text x="340" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">19</text>
-      <text x="395" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">20</text>
-      <text x="65" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">21</text>
-      <text x="120" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">22</text>
-      <text x="175" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">23</text>
-      <text x="230" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">24</text>
-      <text x="285" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">25</text>
-      <text x="340" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">26</text>
-      <text x="395" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">27</text>
-      <text x="65" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">28</text>
-      <text x="120" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">29</text>
-      <text x="175" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">30</text>
-      <text x="220" y="510" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#9B7E77" letter-spacing="6">2026</text>
-      <rect x="0" y="590" width="440" height="98" fill="#9B7E77"></rect>
-      <rect x="0" y="678" width="440" height="10" rx="0" fill="#9B7E77"></rect>
-      <text x="220" y="628" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#E8E0D7" font-style="italic">Dvůr Gigant Záluží
-</text>
-
-
-<text x="220" y="670" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#E8E0D7" font-style="italic">🐾 dog friendly
-</text>
-
-    </svg>
-  </div>
-</section>
-
-<!-- ══ TIMELINE ══ -->
-<section id="timeline">
-  <h2 class="sec-title js-reveal visible">
-    <span data-lang="cs" class="active">Harmonogram</span>
-    <span data-lang="en" class="">Day Schedule</span>
-    <span data-lang="ru" class="">Тайминг дня</span>
-  </h2>
-  <p class="sec-sub js-reveal visible">
-    <span data-lang="cs" class="active"></span>
-    <span data-lang="en" class=""></span>
-    <span data-lang="ru" class=""></span>
-  </p>
-  <div class="timeline-wrap">
-    <div class="timeline-line visible" id="timelineLine"></div>
-
-    <!-- 12:30 Příchod hostů -->
-    <div class="timeline-item js-reveal visible" style="transition-delay:.1s">
-      <div class="timeline-content">
-        <span class="timeline-time">12:30</span>
-        <span class="timeline-label">
-          <span data-lang="cs" class="active">Příchod hostů</span>
-          <span data-lang="en" class="">Guests arrive</span>
-          <span data-lang="ru" class="">Сбор гостей</span>
-        </span>
-      </div>
-      <div class="timeline-icon-wrap">
-        <div class="timeline-dot"></div>
-        <div class="timeline-icon">
-          <span style="font-size:1.3rem">🥂</span>
-        </div>
-      </div>
-      <div class="timeline-content" style="visibility:hidden"></div>
-    </div>
-
-    <!-- 13:00 Obřad -->
-    <div class="timeline-item js-reveal visible" style="transition-delay:.25s">
-      <div class="timeline-content" style="visibility:hidden"></div>
-      <div class="timeline-icon-wrap">
-        <div class="timeline-dot"></div>
-        <div class="timeline-icon">
-          <span style="font-size:1.3rem">💍</span>
-        </div>
-      </div>
-      <div class="timeline-content">
-        <span class="timeline-time">13:00</span>
-        <span class="timeline-label">
-          <span data-lang="cs" class="active">Obřad</span>
-          <span data-lang="en" class="">Ceremony</span>
-          <span data-lang="ru" class="">Церемония</span>
-        </span>
-      </div>
-    </div>
-
-    <!-- 15:15 Hostina -->
-    <div class="timeline-item js-reveal visible" style="transition-delay:.4s">
-      <div class="timeline-content">
-        <span class="timeline-time">15:00</span>
-        <span class="timeline-label">
-          <span data-lang="cs" class="active">Svatební hostina</span>
-          <span data-lang="en" class="">Wedding banquet</span>
-          <span data-lang="ru" class="">Ссвадебный банкет</span>
-        </span>
-        <span class="timeline-label" style="margin-top:6px;font-style:italic;color:var(--blush);">
-          <span data-lang="cs" class="active"></span>
-          <span data-lang="en" class=""></span>
-          <span data-lang="ru" class=""></span>
-        </span>
-      </div>
-      <div class="timeline-icon-wrap">
-        <div class="timeline-dot"></div>
-        <div class="timeline-icon">
-          <span style="font-size:1.3rem">🍽️</span>
-        </div>
-      </div>
-      <div class="timeline-content" style="visibility:hidden"></div>
-    </div>
-
-    <!-- 16:30 Dort -->
-    <div class="timeline-item js-reveal visible" style="transition-delay:.55s">
-      <div class="timeline-content" style="visibility:hidden"></div>
-      <div class="timeline-icon-wrap">
-        <div class="timeline-dot"></div>
-        <div class="timeline-icon">
-          <span style="font-size:1.3rem">🎂</span>
-        </div>
-      </div>
-      <div class="timeline-content">
-        <span class="timeline-time">18:00</span>
-        <span class="timeline-label">
-          <span data-lang="cs" class="active">Dort</span>
-          <span data-lang="en" class="">Cake</span>
-          <span data-lang="ru" class="">Торт</span>
-        </span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══ DRESS CODE ══ -->
-<section id="dresscode">
-  <h2 class="sec-title js-reveal visible">
-    <span data-lang="cs" class="active">Dress Code</span>
-    <span data-lang="en" class="">Dress Code</span>
-    <span data-lang="ru" class="">Дрес-код</span>
-  </h2>
-<!--  <p class="sec-sub js-reveal">-->
-<!--    <span data-lang="cs" class="active">barvy naší svatby</span>-->
-<!--    <span data-lang="en">our wedding colours</span>-->
-<!--    <span data-lang="ru">цвета нашей свадьбы</span>-->
-<!--  </p>-->
-  <p class="dresscode-intro js-reveal visible">
-    <span data-lang="cs" class="active">Budeme velmi vděčni, pokud si vyberete oblečení v barvách naší svatby.</span>
-    <span data-lang="en" class="">We would be very grateful if you chose outfits in the colours of our wedding.</span>
-    <span data-lang="ru" class="">Мы будем очень признательны, если вы выберете наряды в цветах нашей свадьбы.</span>
-  </p>
-
-  <!-- Women -->
-  <div class="palette-group js-reveal visible">
-     <h3 class="sec-title js-reveal visible">
-      <span data-lang="cs" class="active">Ženy</span>
-      <span data-lang="en" class="">Women</span>
-      <span data-lang="ru" class="">Женщины</span>
-    </h3>
-    <p class="dresscode-women-note js-reveal visible">
-      <span data-lang="cs" class="active">Prosíme vás, zvolte si šaty<br>v některé z těchto barev.</span>
-      <span data-lang="en" class="">We kindly ask you to wear a dress<br>in one of these shades.</span>
-      <span data-lang="ru" class="">Просим вас выбрать платье<br>в одном из этих оттенков.</span>
-    </p>
-    <div class="swatches-grid js-reveal visible">
-      <div class="swatch"><div class="swatch-inner sw-wine"></div></div>
-      <div class="swatch"><div class="swatch-inner sw-crimson"></div></div>
-      <div class="swatch"><div class="swatch-inner sw-mauve"></div></div>
-      <div class="swatch"><div class="swatch-inner sw-powder"></div></div>
-      <div class="swatch"><div class="swatch-inner sw-burgundy"></div></div>
-      <div class="swatch"><div class="swatch-inner sw-rosemauve"></div></div>
-    </div>
-  </div>
-
-  <!-- Men -->
-  <div class="palette-group js-reveal visible" style="transition-delay:.15s">
-    <h3 class="sec-title js-reveal visible">
-      <span data-lang="cs" class="active">Muži</span>
-      <span data-lang="en" class="">Men</span>
-      <span data-lang="ru" class="">Мужчины</span>
-    </h3>
-    <p class="men-note active" data-lang="cs">
-      <span class="men-line">
-        šedý oblek &nbsp;·&nbsp; bílá košile
-        <span class="men-suit-swatches">
-          <span class="men-tie-dot" style="background:linear-gradient(145deg,#8a8680,#707068)" title="šedá"></span>
-          <span class="men-suit-sep">·</span>
-          <span class="men-tie-dot" style="background:linear-gradient(145deg,#FAF8F6,#e0ddd8);border:1px solid #d0cdc8" title="bílá"></span>
-        </span>
-      </span>
-      <span class="men-accent">kravata v barvách svého doprovodu</span>
-      <span class="men-tie-swatches" aria-label="Paleta barev kravaty">
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#6b2d35,#4e1c24)" title="vínová"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#b02250,#841638)" title="karmínová"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#8c5f60,#6e4648)" title="starorůžová"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#d4aead,#b89290)" title="pudrová"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#420012,#280008)" title="burgundy"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#b07e82,#906268)" title="rose mauve"></span>
-      </span>
-      <span class="men-tie-label">paleta kravaty</span>
-    </p>
-    <p class="men-note" data-lang="en">
-      <span class="men-line">
-        grey suit &nbsp;·&nbsp; white shirt
-        <span class="men-suit-swatches">
-          <span class="men-tie-dot" style="background:linear-gradient(145deg,#8a8680,#707068)" title="grey"></span>
-          <span class="men-suit-sep">·</span>
-          <span class="men-tie-dot" style="background:linear-gradient(145deg,#FAF8F6,#e0ddd8);border:1px solid #d0cdc8" title="white"></span>
-        </span>
-      </span>
-      <span class="men-accent">tie matching your companion's colours</span>
-      <span class="men-tie-swatches" aria-label="Tie colour palette">
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#6b2d35,#4e1c24)" title="wine"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#b02250,#841638)" title="crimson"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#8c5f60,#6e4648)" title="mauve"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#d4aead,#b89290)" title="powder"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#420012,#280008)" title="burgundy"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#b07e82,#906268)" title="rose mauve"></span>
-      </span>
-      <span class="men-tie-label">tie palette</span>
-    </p>
-    <p class="men-note" data-lang="ru">
-      <span class="men-line">
-        серый костюм &nbsp;·&nbsp; белая рубашка
-        <span class="men-suit-swatches">
-          <span class="men-tie-dot" style="background:linear-gradient(145deg,#8a8680,#707068)"></span>
-          <span class="men-suit-sep">·</span>
-          <span class="men-tie-dot" style="background:linear-gradient(145deg,#FAF8F6,#e0ddd8);border:1px solid #d0cdc8"></span>
-        </span>
-      </span>
-      <span class="men-accent">галстук в цветах своей спутницы</span>
-      <span class="men-tie-swatches" aria-label="Палитра галстука">
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#6b2d35,#4e1c24)"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#b02250,#841638)"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#8c5f60,#6e4648)"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#d4aead,#b89290)"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#420012,#280008)"></span>
-        <span class="men-tie-dot" style="background:linear-gradient(145deg,#b07e82,#906268)"></span>
-      </span>
-      <span class="men-tie-label">палитра галстука</span>
-    </p>
-  </div>
-</section>
-
-<!-- ══ GIFTS ══ -->
-<section id="gifts">
-  <h2 class="sec-title js-reveal visible">
-    <span data-lang="cs" class="active">Poznámky</span>
-    <span data-lang="en" class="">Notes</span>
-    <span data-lang="ru" class="">Примечания</span>
-  </h2>
-<!--  <p class="sec-sub js-reveal">-->
-<!--    <span data-lang="cs" class="active">malá poznámka</span>-->
-<!--    <span data-lang="en">a small note</span>-->
-<!--    <span data-lang="ru">небольшая заметка</span>-->
-<!--  </p>-->
-  <div class="gifts-box js-reveal visible">
-    <span class="box-heart">🩷</span>
-    <svg class="gifts-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-      <polyline points="20 12 20 22 4 22 4 12"></polyline>
-      <rect x="2" y="7" width="20" height="5"></rect>
-      <line x1="12" y1="22" x2="12" y2="7"></line>
-      <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-      <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-    </svg>
-    <p class="gifts-text active" data-lang="cs">
-      Svatební dary přijímáme ve finanční formě –<br>
-      v hotovosti v českých korunách nebo eurech.
-    </p>
-    <p class="gifts-text" data-lang="en">
-      We gratefully accept wedding gifts in financial form –<br>
-      cash in Czech crowns or euros.
-    </p>
-    <p class="gifts-text" data-lang="ru">
-      Свадебные подарки принимаем в денежной форме –<br>
-      наличными в чешских кронах или евро.
-    </p>
-  </div>
-<div class="gifts-box js-reveal visible">
-    
-    
-    <p class="gifts-text active" data-lang="cs">
-      Milí hosté, budeme rádi, když si každý z vás připraví pár milých slov nebo krátký přípitek pro novomanžele. Během svatební hostiny bude mít každý možnost něco říct.</p>
-    <p class="gifts-text" data-lang="en">Dear guests, we’d love it if each of you could prepare a short toast for the couple. During the wedding reception, everyone will have a chance to say something.<br></p>
-    <p class="gifts-text" data-lang="ru">Дорогие гости, будем рады, если каждый из вас подготовит небольшой тост для молодожёнов. Во время свадебного вечера у всех будет возможность что-то сказать.<br></p>
-  </div></section>
-
-
-<!-- ══ RSVP ══ -->
-<section id="rsvp">
-   <div class="js-reveal visible" style="margin: -28px auto 48px; text-align:center;">
-  </div>
-  <div class="rsvp-box js-reveal visible" id="rsvpBox">
-    <span class="box-heart">🩷</span>
-    <p class="rsvp-deadline">
-      <span data-lang="cs" class="active">Prosíme odpovězte do 15. 8. 2026</span>
-      <span data-lang="en" class="">Please respond by 15 August 2026</span>
-      <span data-lang="ru" class="">Пожалуйста ответьте до 15.08.2026</span>
-    </p>
-
-    <input class="rsvp-field" id="rsvpName" type="text" placeholder="Vaše jméno a příjmení">
-
-    <p class="rsvp-question">
-      <span data-lang="cs" class="active">Plánujete se zúčastnit svatby?</span>
-      <span data-lang="en" class="">Do you plan to attend the wedding?</span>
-      <span data-lang="ru" class="">Чи плануєте ви бути на весіллі?</span>
-    </p>
-    <div class="rsvp-options" id="attendOptions">
-      <div class="rsvp-option" onclick="selectAttend(this, &#39;yes&#39;)">
-        <div class="rsvp-radio"></div>
-        <span data-lang="cs" class="active">Ano, s radostí!</span>
-        <span data-lang="en" class="">Yes, with pleasure!</span>
-        <span data-lang="ru" class="">Так, із задоволенням!</span>
-      </div>
-      <div class="rsvp-option" onclick="selectAttend(this, &#39;no&#39;)">
-        <div class="rsvp-radio"></div>
-        <span data-lang="cs" class="active">Bohužel se nemohu zúčastnit</span>
-        <span data-lang="en" class="">Unfortunately I cannot attend</span>
-        <span data-lang="ru" class="">На жаль, не зможу</span>
-      </div>
-    </div>
-
-    <p class="rsvp-question">
-      <span data-lang="cs" class="active">Vaše preference alkoholických nápojů:</span>
-      <span data-lang="en" class="">Your alcoholic drink preferences:</span>
-      <span data-lang="ru" class="">Укажите, пожалуйста, ваши пожелания относительно алкогольных напитков:</span>
-    </p>
-    <div class="alcohol-grid" id="alcoholGrid">
-      <div class="alcohol-btn" onclick="toggleAlcohol(this)">
-        <span data-lang="cs" class="active">Šampaňské</span>
-        <span data-lang="en" class="">Champagne</span>
-        <span data-lang="ru" class="">Шампанское</span>
-      </div>
-      <div class="alcohol-btn" onclick="toggleAlcohol(this)">
-        <span data-lang="cs" class="active">Bílé víno</span>
-        <span data-lang="en" class="">White wine</span>
-        <span data-lang="ru" class="">Белое вино
-</span>
-      </div>
-      <div class="alcohol-btn" onclick="toggleAlcohol(this)">
-        <span data-lang="cs" class="active">Červené víno</span>
-        <span data-lang="en" class="">Red wine</span>
-        <span data-lang="ru" class="">Красное вино</span>
-      </div>
-      <div class="alcohol-btn" onclick="toggleAlcohol(this)">
-        <span data-lang="cs" class="active">Rum</span>
-        <span data-lang="en" class="">Rum</span>
-        <span data-lang="ru" class="">Ром</span>
-      </div>
-      
-      <div class="alcohol-btn" onclick="toggleAlcohol(this)">
-        <span data-lang="cs" class="active">Vodka</span>
-        <span data-lang="en" class="">Vodka</span>
-        <span data-lang="ru" class="">Водка</span>
-      </div><div class="alcohol-btn" onclick="toggleAlcohol(this)">
-        <span data-lang="cs" class="active">Pivo</span>
-        <span data-lang="en" class="">Beer</span>
-        <span data-lang="ru" class="">Пиво</span>
-      </div>
-    </div>
-
-    <p class="rsvp-question" style="margin-top:8px;">
-      <span data-lang="cs" class="active">Alergie nebo dietní omezení:</span>
-      <span data-lang="en" class="">Allergies or dietary restrictions:</span>
-      <span data-lang="ru" class="">Аллергии или диетические ограничения:</span>
-    </p>
-    <textarea class="rsvp-field" id="rsvpAllergy" rows="3" style="border-radius:16px; resize:none; padding:14px 18px; width:100%; margin-bottom:20px;" placeholder="např. laktóza, lepek, ořechy…"></textarea>
-
-    <button class="rsvp-submit" onclick="submitRsvp()">
-      <span data-lang="cs" class="active">Odeslat</span>
-      <span data-lang="en" class="">Submit</span>
-      <span data-lang="ru" class="">Відправити</span>
-    </button>
-    <div class="rsvp-success" id="rsvpSuccess">
-      <p class="rsvp-success-title">
-        <span data-lang="cs" class="active">Váš e-mail je připraven!</span>
-        <span data-lang="en" class="">Your e-mail is ready!</span>
-        <span data-lang="ru" class="">Ваш e-mail готов!</span>
-      </p>
-      <p class="rsvp-success-sub">
-        <span data-lang="cs" class="active">Zkopírujte text níže a pošlete ho na e-mailovou adresu:<br><a href="mailto:annasian9@gmail.com" style="color:var(--seal);text-decoration:none;border-bottom:1px solid var(--blush);">annasian9@gmail.com</a></span>
-        <span data-lang="en" class="">Copy the text below and send it to:<br><a href="mailto:annasian9@gmail.com" style="color:var(--seal);text-decoration:none;border-bottom:1px solid var(--blush);">annasian9@gmail.com</a></span>
-        <span data-lang="ru" class="">Скопируйте текст ниже и отправьте на:<br><a href="mailto:annasian9@gmail.com" style="color:var(--seal);text-decoration:none;border-bottom:1px solid var(--blush);">annasian9@gmail.com</a></span>
-      </p>
-      <div class="mail-preview" id="mailPreview"></div>
-      <button class="mail-copy-btn" id="mailCopyBtn" onclick="copyMail()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px;flex-shrink:0">
-          <rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-        <span data-lang="cs" class="active">Zkopírovat text</span>
-        <span data-lang="en" class="">Copy text</span>
-        <span data-lang="ru" class="">Скопировать текст</span>
-      </button>
-      <p class="mail-copied-hint" id="mailCopiedHint" style="display:none">
-        <span data-lang="cs" class="active">✓ Zkopírováno!</span>
-        <span data-lang="en" class="">✓ Copied!</span>
-        <span data-lang="ru" class="">✓ Скопировано!</span>
-      </p>
-    </div>
-  </div>
-
-     <h2 class="sec-title js-reveal visible">
-    <span data-lang="cs" class="active">Dorazíte? 😊</span>
-    <span data-lang="en" class="">Will you join us? 😊</span>
-    <span data-lang="ru" class="">Придёте? 😊</span>
-  </h2>
-    <svg viewBox="0 0 220 18" xmlns="http://www.w3.org/2000/svg" style="width:min(220px,60vw);display:inline-block;">
-      <path d="M0 9 C18 3, 28 15, 44 9 C60 3, 70 15, 88 9 C104 3, 114 15, 132 9 C148 3, 158 15, 176 9 C192 3, 202 15, 220 9" fill="none" stroke="#C8A5A4" stroke-width="1.4" stroke-linecap="round"></path>
-    </svg>
-</section>
-
-
-
-<!-- ══ FOOTER ══ -->
-<footer>
-  <span class="footer-names">Anna &amp; Daniel</span>
-  5·9·2026
-</footer>
-
-<script>
-  /* ── Language ── */
-  function setLang(lang) {
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      el.classList.toggle('active', el.dataset.lang === lang);
-    });
-  }
-
-  /* ── Envelope ── */
-  let envOpened = false;
-  function openEnvelope() {
-    if (envOpened) return;
-    envOpened = true;
-    document.getElementById('envFlap').style.transform = 'rotateX(-180deg)';
-    document.getElementById('envFlap').style.zIndex = '1';
-    document.getElementById('envWidget').classList.add('opened');
-  }
-  window.addEventListener('scroll', () => {
-    if (!envOpened && window.scrollY > window.innerHeight * 0.22) openEnvelope();
-  }, { passive: true });
-
-  /* ── RSVP ── */
-  let attendChoice = null;
-  function selectAttend(el, val) {
-    attendChoice = val;
-    document.querySelectorAll('#attendOptions .rsvp-option').forEach(o => {
-      o.classList.remove('selected');
-      o.querySelector('.rsvp-radio').classList.remove('checked');
-    });
-    el.classList.add('selected');
-    el.querySelector('.rsvp-radio').classList.add('checked');
-  }
-  function toggleAlcohol(el) {
-    el.classList.toggle('selected');
-  }
-  function submitRsvp() {
-    const name = document.getElementById('rsvpName').value.trim();
-    if (!name) {
-      document.getElementById('rsvpName').style.borderColor = 'var(--blush)';
-      document.getElementById('rsvpName').focus();
-      return;
-    }
-
-    const lang = document.querySelector('.lang-btn.active').getAttribute('onclick').match(/'(\w+)'/)[1];
-    const attending = attendChoice === 'yes';
-
-    const alcoholBtns = [...document.querySelectorAll('#alcoholGrid .alcohol-btn')];
-    const drinks = alcoholBtns
-      .filter(b => b.classList.contains('selected'))
-      .map(b => b.querySelector(`[data-lang="${lang}"]`)?.textContent.trim() || b.querySelector('[data-lang="cs"]')?.textContent.trim())
-      .filter(Boolean);
-
-    const allergy = document.getElementById('rsvpAllergy').value.trim();
-
-    const texts = {
-      cs: [
-        `Předmět: Potvrzení účasti – svatba Anny & Daniela`,
-        ``,
-        `Dobrý den,`,
-        ``,
-        `jmenuji se ${name} a zasílám potvrzení k vaší svatební anketě.`,
-        ``,
-        attending
-          ? `✓ Účast: Ano, s radostí se zúčastním svatby dne 5. září 2026.`
-          : `✗ Účast: Bohužel se nemohu zúčastnit.`,
-        drinks.length
-          ? `✓ Preference alkoholu: ${drinks.join(', ')}`
-          : `✓ Preference alkoholu: žádná`,
-        allergy
-          ? `✓ Alergie / dietní omezení: ${allergy}`
-          : `✓ Alergie / dietní omezení: žádné`,
-        ``,
-        `Těším se na tento krásný den!`,
-        ``,
-        `S pozdravem`,
-        name,
-      ].join('\n'),
-
-      en: [
-        `Subject: Attendance confirmation – Anna & Daniel's wedding`,
-        ``,
-        `Dear Anna & Daniel,`,
-        ``,
-        `My name is ${name} and I am submitting my response to your wedding survey.`,
-        ``,
-        attending
-          ? `✓ Attendance: Yes, I will gladly attend the wedding on 5 September 2026.`
-          : `✗ Attendance: Unfortunately I am unable to attend.`,
-        drinks.length
-          ? `✓ Drink preferences: ${drinks.join(', ')}`
-          : `✓ Drink preferences: none`,
-        allergy
-          ? `✓ Allergies / dietary restrictions: ${allergy}`
-          : `✓ Allergies / dietary restrictions: none`,
-        ``,
-        `Looking forward to this beautiful day!`,
-        ``,
-        `Kind regards,`,
-        name,
-      ].join('\n'),
-
-      ru: [
-        `Тема: Подтверждение участия – свадьба Анны & Даниэля`,
-        ``,
-        `Добрый день,`,
-        ``,
-        `Меня зовут ${name}, отправляю подтверждение на вашу свадебную анкету.`,
-        ``,
-        attending
-          ? `✓ Участие: Да, с удовольствием приду на свадьбу 5 сентября 2026 г.`
-          : `✗ Участие: К сожалению, не смогу присутствовать.`,
-        drinks.length
-          ? `✓ Предпочтения по алкоголю: ${drinks.join(', ')}`
-          : `✓ Предпочтения по алкоголю: нет`,
-        allergy
-          ? `✓ Аллергии / диетические ограничения: ${allergy}`
-          : `✓ Аллергии / диетические ограничения: нет`,
-        ``,
-        `С нетерпением жду этого прекрасного дня!`,
-        ``,
-        `С уважением,`,
-        name,
-      ].join('\n'),
-    };
-
-    window._mailText = texts[lang] || texts.cs;
-    document.getElementById('mailPreview').textContent = window._mailText;
-
-    const form = document.getElementById('rsvpBox');
-    const success = document.getElementById('rsvpSuccess');
-    [...form.children].forEach(c => { if (c !== success) c.style.opacity = '0'; });
-    setTimeout(() => {
-      [...form.children].forEach(c => { if (c !== success) c.style.display = 'none'; });
-      success.style.display = 'block';
-      setLang(lang);
-    }, 400);
-  }
-
-  function copyMail() {
-    const text = window._mailText || document.getElementById('mailPreview').textContent;
-    navigator.clipboard.writeText(text).then(() => {
-      const hint = document.getElementById('mailCopiedHint');
-      const lang = document.querySelector('.lang-btn.active').getAttribute('onclick').match(/'(\w+)'/)[1];
-      hint.style.display = 'block';
-      setLang(lang);
-      setTimeout(() => { hint.style.display = 'none'; }, 2500);
-    });
-  }
-
-  /* ── Scroll reveal ── */
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll(
-    '.js-reveal, .detail-card, .map-wrap, .cal-wrap, .gifts-box, .timeline-item, .dresscode-intro, .swatches-grid, .palette-group, .rsvp-box'
-  ).forEach(el => io.observe(el));
-  const lineEl = document.getElementById('timelineLine');
-  if (lineEl) {
-    const lineObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { lineEl.classList.add('visible'); lineObs.unobserve(lineEl); }
-      });
-    }, { threshold: 0.1 });
-    lineObs.observe(lineEl);
-  }
-
-  setTimeout(() => {
-    document.querySelectorAll('.js-reveal, .palette-group, .cal-wrap, .map-wrap, .detail-card, .gifts-box, .dresscode-intro, .swatches-grid, .rsvp-box, .timeline-item')
-      .forEach(el => el.classList.add('visible'));
-    if (lineEl) lineEl.classList.add('visible');
-  }, 3000);
-
-  window.addEventListener('load', () => { setLang('cs'); });
-</script>
-
-
-</body></html>
-backdrop-filter: blur(4px);
   }
   .lang-btn {
     border: 1px solid var(--blush); background: transparent;
@@ -2555,11 +964,11 @@ backdrop-filter: blur(4px);
         <span data-lang="en">Date</span>
         <span data-lang="ru">Дата</span>
       </p>
-      <p class="detail-value">5. září 2026<br><span style="font-style:italic;font-size:.88em">sobota / Saturday</span></p>
+      <p class="detail-value">5. září 2026<br><span style="font-style:italic;font-size:.88em">sobota</span></p>
     </div>
     <div class="detail-card js-reveal" style="transition-delay:.12s">
       <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-        <circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 15.5"/>
+        <circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15.5 15.5"></polyline>
       </svg>
       <p class="detail-label">
         <span data-lang="cs" class="active">Čas</span>
@@ -2575,8 +984,8 @@ backdrop-filter: blur(4px);
     </div>
     <div class="detail-card js-reveal" style="transition-delay:.24s">
       <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-        <path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"/>
-        <circle cx="12" cy="10" r="3"/>
+        <path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
       </svg>
       <p class="detail-label">
         <span data-lang="cs" class="active">Místo</span>
@@ -2586,7 +995,7 @@ backdrop-filter: blur(4px);
       <p class="detail-value">Dvůr Gigant Záluží<br>
         <span style="font-size:.85em;font-style:italic">Kotovice – Záluží 1, 333 01 Stod</span>
       </p>
-      <p class="detail-note" style="margin-top:10px;">🐾 dog friendly</p>
+      <p class="detail-note" style="margin-top:10px;"></p>
     </div>
   </div>
   <div class="map-wrap js-reveal">
@@ -2600,11 +1009,11 @@ backdrop-filter: blur(4px);
   <!-- ══ CALENDAR ══ -->
   <div class="cal-wrap js-reveal" style="transition-delay:.15s">
     <svg xmlns="http://www.w3.org/2000/svg" width="440" height="688" viewBox="0 0 440 688">
-      <rect width="440" height="688" fill="#E8E0D7"/>
-      <rect x="28" y="60" width="384" height="560" rx="10" fill="none" stroke="#9B7E77" stroke-width="2"/>
-      <rect x="35" y="67" width="370" height="546" rx="7" fill="none" stroke="#9B7E77" stroke-width="0.8"/>
+      <rect width="440" height="688" fill="#E8E0D7"></rect>
+      <rect x="28" y="60" width="384" height="560" rx="10" fill="none" stroke="#9B7E77" stroke-width="2"></rect>
+      <rect x="35" y="67" width="370" height="546" rx="7" fill="none" stroke="#9B7E77" stroke-width="0.8"></rect>
       <text x="220" y="122" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#9B7E77" font-style="italic">Září</text>
-      <text x="65"  y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#9B7E77" font-style="italic">Po</text>
+      <text x="65" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#9B7E77" font-style="italic">Po</text>
       <text x="120" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#9B7E77" font-style="italic">Út</text>
       <text x="175" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#9B7E77" font-style="italic">St</text>
       <text x="230" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#9B7E77" font-style="italic">Čt</text>
@@ -2615,38 +1024,44 @@ backdrop-filter: blur(4px);
       <text x="175" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">2</text>
       <text x="230" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">3</text>
       <text x="285" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">4</text>
-      <circle cx="340" cy="204" r="20" fill="#C8A5A4"/>
-      <circle cx="340" cy="204" r="20" fill="none" stroke="#9B7E77" stroke-width="1.2"/>
+      <circle cx="340" cy="204" r="20" fill="#C8A5A4"></circle>
+      <circle cx="340" cy="204" r="20" fill="none" stroke="#9B7E77" stroke-width="1.2"></circle>
       <text x="340" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#E8E0D7" font-style="italic">5</text>
       <text x="395" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">6</text>
-      <text x="65"  y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">7</text>
+      <text x="65" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">7</text>
       <text x="120" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">8</text>
       <text x="175" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">9</text>
       <text x="230" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">10</text>
       <text x="285" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">11</text>
       <text x="340" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">12</text>
       <text x="395" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">13</text>
-      <text x="65"  y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">14</text>
+      <text x="65" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">14</text>
       <text x="120" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">15</text>
       <text x="175" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">16</text>
       <text x="230" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">17</text>
       <text x="285" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">18</text>
       <text x="340" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">19</text>
       <text x="395" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">20</text>
-      <text x="65"  y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">21</text>
+      <text x="65" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">21</text>
       <text x="120" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">22</text>
       <text x="175" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">23</text>
       <text x="230" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">24</text>
       <text x="285" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">25</text>
       <text x="340" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">26</text>
       <text x="395" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">27</text>
-      <text x="65"  y="430" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">28</text>
+      <text x="65" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">28</text>
       <text x="120" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">29</text>
       <text x="175" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b5a58" font-style="italic">30</text>
       <text x="220" y="510" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#9B7E77" letter-spacing="6">2026</text>
-      <rect x="0" y="590" width="440" height="98" fill="#9B7E77"/>
-      <rect x="0" y="678" width="440" height="10" rx="0" fill="#9B7E77"/>
-      <text x="220" y="638" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#E8E0D7" font-style="italic">Dvůr Gigant Záluží</text>
+      <rect x="0" y="590" width="440" height="98" fill="#9B7E77"></rect>
+      <rect x="0" y="678" width="440" height="10" rx="0" fill="#9B7E77"></rect>
+      <text x="220" y="628" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#E8E0D7" font-style="italic">Dvůr Gigant Záluží
+</text>
+
+
+<text x="220" y="670" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#E8E0D7" font-style="italic">🐾 dog friendly
+</text>
+
     </svg>
   </div>
 </section>
@@ -2654,14 +1069,14 @@ backdrop-filter: blur(4px);
 <!-- ══ TIMELINE ══ -->
 <section id="timeline">
   <h2 class="sec-title js-reveal">
-    <span data-lang="cs" class="active">Průběh dne</span>
+    <span data-lang="cs" class="active">Harmonogram</span>
     <span data-lang="en">Day Schedule</span>
     <span data-lang="ru">Тайминг дня</span>
   </h2>
   <p class="sec-sub js-reveal">
-    <span data-lang="cs" class="active">harmonogram</span>
-    <span data-lang="en">Schedule</span>
-    <span data-lang="ru">программа свадебного дня</span>
+    <span data-lang="cs" class="active"></span>
+    <span data-lang="en"></span>
+    <span data-lang="ru"></span>
   </p>
   <div class="timeline-wrap">
     <div class="timeline-line" id="timelineLine"></div>
@@ -2707,16 +1122,16 @@ backdrop-filter: blur(4px);
     <!-- 15:15 Hostina -->
     <div class="timeline-item js-reveal" style="transition-delay:.4s">
       <div class="timeline-content">
-        <span class="timeline-time">15:15</span>
+        <span class="timeline-time">15:00</span>
         <span class="timeline-label">
-          <span data-lang="cs" class="active">Zahájení svatební hostiny</span>
-          <span data-lang="en">Wedding banquet begins</span>
-          <span data-lang="ru">Начало свадебного банкета</span>
+          <span data-lang="cs" class="active">Svatební hostina</span>
+          <span data-lang="en">Wedding banquet</span>
+          <span data-lang="ru">Ссвадебный банкет</span>
         </span>
         <span class="timeline-label" style="margin-top:6px;font-style:italic;color:var(--blush);">
-          <span data-lang="cs" class="active">🎤 Připravte si proslov!</span>
-          <span data-lang="en">🎤 Prepare a speech!</span>
-          <span data-lang="ru">🎤 Подготовьте тост!</span>
+          <span data-lang="cs" class="active"></span>
+          <span data-lang="en"></span>
+          <span data-lang="ru"></span>
         </span>
       </div>
       <div class="timeline-icon-wrap">
@@ -2738,7 +1153,7 @@ backdrop-filter: blur(4px);
         </div>
       </div>
       <div class="timeline-content">
-        <span class="timeline-time">16:30</span>
+        <span class="timeline-time">18:00</span>
         <span class="timeline-label">
           <span data-lang="cs" class="active">Dort</span>
           <span data-lang="en">Cake</span>
@@ -2863,9 +1278,9 @@ backdrop-filter: blur(4px);
 <!-- ══ GIFTS ══ -->
 <section id="gifts">
   <h2 class="sec-title js-reveal">
-    <span data-lang="cs" class="active">Dary</span>
-    <span data-lang="en">Gifts</span>
-    <span data-lang="ru">Подарки</span>
+    <span data-lang="cs" class="active">Poznámky</span>
+    <span data-lang="en">Notes</span>
+    <span data-lang="ru">Примечания</span>
   </h2>
 <!--  <p class="sec-sub js-reveal">-->
 <!--    <span data-lang="cs" class="active">malá poznámka</span>-->
@@ -2894,6 +1309,18 @@ backdrop-filter: blur(4px);
       наличными в чешских кронах или евро.
     </p>
   </div>
+<br>
+<div class="gifts-box js-reveal">
+
+    <span class="box-heart">🎤</span>
+    <p class="gifts-text active" data-lang="cs">
+
+      Milí hosté, budeme rádi, když si každý z vás připraví pár milých slov nebo krátký přípitek pro novomanžele. Během svatební hostiny bude mít každý možnost něco říct.</p>
+    <p class="gifts-text" data-lang="en">Dear guests, we’d love it if each of you could prepare a short toast for the couple. During the wedding reception, everyone will have a chance to say something.<br></p>
+    <p class="gifts-text" data-lang="ru">Дорогие гости, будем рады, если каждый из вас подготовит небольшой тост для молодожёнов. Во время свадебного вечера у всех будет возможность что-то сказать.<br></p>
+  </div>
+
+
 </section>
 
 
@@ -2901,16 +1328,29 @@ backdrop-filter: blur(4px);
 <section id="rsvp">
    <div class="js-reveal" style="margin: -28px auto 48px; text-align:center;">
   </div>
+         <h2 class="sec-title js-reveal">
+    <span data-lang="cs" class="active">Dorazíte? 😊</span>
+    <span data-lang="en">Will you join us? 😊</span>
+    <span data-lang="ru">Придёте? 😊</span>
+  </h2>
+    <svg viewBox="0 0 220 18" xmlns="http://www.w3.org/2000/svg" style="width:min(220px,60vw);display:inline-block;">
+      <path d="M0 9 C18 3, 28 15, 44 9 C60 3, 70 15, 88 9 C104 3, 114 15, 132 9 C148 3, 158 15, 176 9 C192 3, 202 15, 220 9" fill="none" stroke="#C8A5A4" stroke-width="1.4" stroke-linecap="round"></path>
+    </svg>
   <div class="rsvp-box js-reveal" id="rsvpBox">
     <span class="box-heart">🩷</span>
     <p class="rsvp-deadline">
-      <span data-lang="cs" class="active">Prosíme odpovězte do 15. 8. 2026.</span>
-      <span data-lang="en">Please respond by 15 August 2026.</span>
-      <span data-lang="ru">Будь ласка, надайте відповідь до 15.08.2026.</span>
+      <span data-lang="cs" class="active">Prosíme odpovězte do 15. 8. 2026</span>
+      <span data-lang="en">Please respond by 15 August 2026</span>
+      <span data-lang="ru">Пожалуйста ответьте до 15.08.2026</span>
     </p>
 
+          <p class="rsvp-question">
+      <span data-lang="cs" class="active">Vaše jméno a příjmení:</span>
+      <span data-lang="en">Your name and surname:</span>
+      <span data-lang="ru">Ваше имя и фамилия:</span>
+    </p>
     <input class="rsvp-field" id="rsvpName" type="text"
-      placeholder="Vaše jméno a příjmení / Your name and surname" />
+      placeholder="..." />
 
     <p class="rsvp-question">
       <span data-lang="cs" class="active">Plánujete se zúčastnit svatby?</span>
@@ -2935,35 +1375,36 @@ backdrop-filter: blur(4px);
     <p class="rsvp-question">
       <span data-lang="cs" class="active">Vaše preference alkoholických nápojů:</span>
       <span data-lang="en">Your alcoholic drink preferences:</span>
-      <span data-lang="ru">Вкажіть, будь ласка, ваші побажання щодо алкогольним напоям:</span>
+      <span data-lang="ru">Укажите, пожалуйста, ваши пожелания относительно алкогольных напитков:</span>
     </p>
     <div class="alcohol-grid" id="alcoholGrid">
       <div class="alcohol-btn" onclick="toggleAlcohol(this)">
-        <span data-lang="cs" class="active">Whisky</span>
-        <span data-lang="en">Whisky</span>
-        <span data-lang="ru">Віскі</span>
+        <span data-lang="cs" class="active">Šampaňské</span>
+        <span data-lang="en">Champagne</span>
+        <span data-lang="ru">Шампанское</span>
+      </div>
+      <div class="alcohol-btn" onclick="toggleAlcohol(this)">
+        <span data-lang="cs" class="active">Bílé víno</span>
+        <span data-lang="en">White wine</span>
+        <span data-lang="ru">Белое вино
+</span>
+      </div>
+      <div class="alcohol-btn" onclick="toggleAlcohol(this)">
+        <span data-lang="cs" class="active">Červené víno</span>
+        <span data-lang="en">Red wine</span>
+        <span data-lang="ru">Красное вино</span>
       </div>
       <div class="alcohol-btn" onclick="toggleAlcohol(this)">
         <span data-lang="cs" class="active">Rum</span>
         <span data-lang="en">Rum</span>
         <span data-lang="ru">Ром</span>
       </div>
-      <div class="alcohol-btn" onclick="toggleAlcohol(this)">
-        <span data-lang="cs" class="active">Víno</span>
-        <span data-lang="en">Wine</span>
-        <span data-lang="ru">Вино</span>
-      </div>
-      <div class="alcohol-btn" onclick="toggleAlcohol(this)">
-        <span data-lang="cs" class="active">Gin</span>
-        <span data-lang="en">Gin</span>
-        <span data-lang="ru">Джин</span>
-      </div>
+
       <div class="alcohol-btn" onclick="toggleAlcohol(this)">
         <span data-lang="cs" class="active">Vodka</span>
         <span data-lang="en">Vodka</span>
-        <span data-lang="ru">Горілка</span>
-      </div>
-      <div class="alcohol-btn" onclick="toggleAlcohol(this)">
+        <span data-lang="ru">Водка</span>
+      </div><div class="alcohol-btn" onclick="toggleAlcohol(this)">
         <span data-lang="cs" class="active">Pivo</span>
         <span data-lang="en">Beer</span>
         <span data-lang="ru">Пиво</span>
@@ -2975,9 +1416,7 @@ backdrop-filter: blur(4px);
       <span data-lang="en">Allergies or dietary restrictions:</span>
       <span data-lang="ru">Аллергии или диетические ограничения:</span>
     </p>
-    <textarea class="rsvp-field" id="rsvpAllergy" rows="3"
-      style="border-radius:16px; resize:none; padding:14px 18px; width:100%; margin-bottom:20px;"
-      placeholder="např. laktóza, lepek, ořechy… / e.g. lactose, gluten, nuts…"></textarea>
+    <textarea class="rsvp-field" id="rsvpAllergy" rows="3" style="border-radius:16px; resize:none; padding:14px 18px; width:100%; margin-bottom:20px;" placeholder="např. laktóza, lepek, ořechy…"></textarea>
 
     <button class="rsvp-submit" onclick="submitRsvp()">
       <span data-lang="cs" class="active">Odeslat</span>
@@ -3012,15 +1451,6 @@ backdrop-filter: blur(4px);
     </div>
   </div>
 
-     <h2 class="sec-title js-reveal">
-    <span data-lang="cs" class="active">Dorazíte? 😊</span>
-    <span data-lang="en">Will you join us? 😊</span>
-    <span data-lang="ru">Придёте? 😊</span>
-  </h2>
-    <svg viewBox="0 0 220 18" xmlns="http://www.w3.org/2000/svg" style="width:min(220px,60vw);display:inline-block;">
-      <path d="M0 9 C18 3, 28 15, 44 9 C60 3, 70 15, 88 9 C104 3, 114 15, 132 9 C148 3, 158 15, 176 9 C192 3, 202 15, 220 9"
-        fill="none" stroke="#C8A5A4" stroke-width="1.4" stroke-linecap="round"/>
-    </svg>
 </section>
 
 
@@ -3028,7 +1458,7 @@ backdrop-filter: blur(4px);
 <!-- ══ FOOTER ══ -->
 <footer>
   <span class="footer-names">Anna &amp; Daniel</span>
-  5 · 9 · 2026 · Dvůr Gigant Záluží
+  5·9·2026
 </footer>
 
 <script>
